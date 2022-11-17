@@ -1,0 +1,79 @@
+.page-header {
+  border-bottom: 1px solid #ececec;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  color: var(--title-text-color);
+  letter-spacing: 0.02em;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    margin-left: 93px;
+    gap: 50px;
+  }
+
+  &__logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+
+  &__link {
+    padding: 32px 0;
+
+    color: currentColor;
+
+    transition: color 250ms var(--time-transition);
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+  }
+
+  &__link--current {
+    position: relative;
+
+    color: var(--accent-color);
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      display: inline-block;
+
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    margin-left: auto;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__link--accent {
+    color: var(--primary-text-color);
+  }
+
+  &__icon {
+    margin-right: 10px;
+
+    fill: currentColor;
+  }
+}
