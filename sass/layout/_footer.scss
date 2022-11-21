@@ -8,8 +8,33 @@
 
   &__container {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+
+    @media screen and (max-width: 1199px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      align-items: baseline;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @media screen and (min-width: $tablet) {
+      justify-content: space-around;
+      flex-direction: row;
+    }
+
+    @media screen and (min-width: $desktop) {
+      align-items: baseline;
+      justify-content: space-between;
+    }
   }
 
   &__address {
@@ -36,7 +61,12 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    align-items: center;
+    gap: 8px;
+
+    @media screen and (min-width: $desktop) {
+      gap: 9px;
+    }
   }
 
   &__text {
@@ -48,24 +78,42 @@
     line-height: calc(16 / 14);
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    text-align: left;
+    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+      text-align: left;
+    }
   }
 
   &__subscribe-container {
-    display: flex;
+    @media screen and (max-width: 1199px) {
+      text-align: center;
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+    }
   }
 
   &__input {
     padding: 15px 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    width: 358px;
+    width: 450px;
     height: 50px;
-    margin-right: 12px;
 
     color: var(--white-color);
     background-color: transparent;
     outline: none;
+
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 358px;
+      margin-right: 12px;
+    }
 
     &:placeholder-shown {
       font-size: 16px;

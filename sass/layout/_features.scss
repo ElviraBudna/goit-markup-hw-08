@@ -1,6 +1,11 @@
 .features {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 
   &__main-title {
     margin-bottom: 50px;
@@ -14,12 +19,18 @@
 
   &__list {
     display: flex;
-    align-content: center;
+    flex-wrap: wrap;
     gap: 30px;
   }
 
   &__item {
-    width: 270px;
+    @media screen and (min-width: $tablet) {
+      max-width: 354px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-width: 270px;
+    }
   }
 
   &__icon-box {
@@ -27,11 +38,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 270px;
+    width: 450px;
     height: 120px;
 
     background: var(--background-color-secondary);
     border-radius: 4px;
+
+    @media screen and (min-width: $tablet) {
+      width: 354px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 270px;
+    }
   }
 
   &__title {
@@ -42,6 +61,10 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--title-text-color);
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
 
   &__text {

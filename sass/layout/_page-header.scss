@@ -8,29 +8,47 @@
   letter-spacing: 0.02em;
 
   &__container {
-    display: flex;
-    align-items: center;
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__nav {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 767px) {
+      justify-content: space-between;
+    }
   }
 
-  &__list {
-    display: flex;
-    margin-left: 93px;
+  &__menu {
+    display: none;
     gap: 50px;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      margin-left: 93px;
+    }
   }
 
   &__logo {
-    padding-top: 24px;
-    padding-bottom: 25px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @media screen and (min-width: $tablet) {
+      padding-top: 26px;
+      padding-bottom: 26px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding-top: 24px;
+      padding-bottom: 25px;
+    }
   }
 
   &__link {
-    padding: 32px 0;
-
     color: currentColor;
 
     transition: color 250ms var(--time-transition);
@@ -38,6 +56,10 @@
     &:hover,
     &:focus {
       color: var(--accent-color);
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 32px 0;
     }
   }
 
@@ -61,10 +83,14 @@
   }
 
   &__contacts {
-    display: flex;
-    margin-left: auto;
-    gap: 30px;
-    align-items: center;
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      margin-left: auto;
+      gap: 30px;
+      align-items: center;
+    }
   }
 
   &__link--accent {
@@ -72,8 +98,20 @@
   }
 
   &__icon {
-    margin-right: 10px;
-
     fill: currentColor;
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 10px;
+    }
+  }
+
+  &__menu-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
   }
 }
