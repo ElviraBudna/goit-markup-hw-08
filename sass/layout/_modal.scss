@@ -8,9 +8,18 @@
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
+  overflow-y: scroll;
 
   transition: opacity 250ms var(--time-transition),
     visibility 250ms var(--time-transition);
+
+  @media screen and (max-width: 767px) {
+    padding-top: 93px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    // width: 226px;
+  }
 }
 
 .backdrop.is-hidden {
@@ -24,12 +33,7 @@
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  min-width: 528px;
-  min-height: 581px;
+  position: relative;
   padding: 40px;
 
   background: var(--white-color);
@@ -39,14 +43,34 @@
 
   transition: transform 250ms var(--time-transition);
 
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    min-width: 528px;
+    min-height: 581px;
+  }
+
   &__text {
     margin-bottom: 12px;
 
     font-size: 20px;
     font-weight: 700;
-    line-height: calc(23 / 20);
-    // text-align: center;
+    line-height: calc(30 / 20);
+    text-align: center;
     color: var(--title-text-color);
+
+    @media screen and (min-width: $desktop) {
+      line-height: calc(23 / 20);
+    }
   }
 
   &__close-button {
@@ -155,8 +179,13 @@
     padding-left: 35px;
     display: block;
 
-    font-size: 14px;
-    line-height: calc(24 / 14);
+    font-size: 12px;
+    line-height: calc(14 / 12);
+
+    @media screen and (min-width: $desktop) {
+      font-size: 14px;
+      line-height: calc(24 / 14);
+    }
   }
 
   &__checkbox-box {
