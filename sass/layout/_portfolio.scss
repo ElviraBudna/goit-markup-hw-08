@@ -1,6 +1,11 @@
 .portfolio {
-  // padding-top: 94px;
-  // padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 
   &__title {
     margin-bottom: 50px;
@@ -12,10 +17,14 @@
   }
 
   &__filter {
-    // display: flex;
-    // justify-content: center;
-    // margin-bottom: 34px;
-    // gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+    gap: 8px;
+
+    @media screen and (min-width: $tablet) {
+      justify-content: center;
+    }
   }
 
   &__cards-list {
