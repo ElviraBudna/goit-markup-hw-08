@@ -31,4 +31,14 @@
     flex-wrap: wrap;
     gap: 30px;
   }
+
+  &__cards {
+    @media screen and (min-width: $tablet) {
+      width: calc((100% - 30px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: calc((100% - 90px) / 4);
+    }
+  }
 }
