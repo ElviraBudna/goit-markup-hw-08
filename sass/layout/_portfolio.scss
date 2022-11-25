@@ -27,6 +27,12 @@
     }
   }
 
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   &__cards-list {
     display: flex;
     flex-wrap: wrap;
