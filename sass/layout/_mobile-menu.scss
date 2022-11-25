@@ -73,18 +73,27 @@
     margin-bottom: 64px;
 
     font-weight: 500;
-    font-size: 24px;
-    line-height: calc(28 / 24);
+    font-size: 20px;
+    line-height: calc(28 / 20);
     letter-spacing: 0.02em;
 
-    &--accent {
-      margin-bottom: 32px;
+    @media screen and (min-width: $mobile) {
+      font-size: 24px;
+      line-height: calc(28 / 24);
+    }
+  }
 
+  &__contacts-link--accent {
+    margin-bottom: 32px;
+
+    font-size: 26px;
+    line-height: calc(40 / 26);
+
+    color: var(--accent-color);
+
+    @media screen and (min-width: $mobile) {
       font-size: 34px;
       line-height: calc(40 / 34);
-      letter-spacing: 0.02em;
-
-      color: var(--accent-color);
     }
   }
 
@@ -95,11 +104,16 @@
 
   &__social-link {
     font-weight: 500;
-    font-size: 18px;
-    line-height: calc(22 / 18);
+    font-size: 12px;
+    line-height: calc(22 / 12);
     letter-spacing: 0.02em;
 
     color: var(--accent-color);
+
+    @media screen and (min-width: $mobile) {
+      font-size: 18px;
+      line-height: calc(22 / 18);
+    }
   }
 
   &__social-line {
